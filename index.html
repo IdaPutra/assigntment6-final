@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="asset/style.css">
+        <title>Weather Dashboard</title>
+        <nav class="navbar navbar-light bg-dark">
+                <a class="navbar-brand mx-auto text-white" href="#">Weather Dashboard</a>
+        </nav>
+</head>
+
+<body>
+        <div class="row">
+                <div class="col-sm">
+                        <!-- Side navigation -->
+                        <div class="sidenav">
+                                <br>
+                                <div class="search-bar">
+                                        <form class="form-inline my-2 my-lg-0">
+                                                <p class="search-city">Search City:</p>
+                                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                                        aria-label="Search" id="search">
+                                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                                        id="submit">Search</button>
+                                        </form>
+                                </div>
+                                <br>
+                                
+                        </div>
+
+
+                </div>
+
+                <div class="col-lg">
+                        <br>
+                        <div class="card" style="width: 50rem; height: 15rem;" id="weather-info">
+                                <div class="card-body">
+                                        <div class="city"></div>
+                                        <div class="wind"></div>
+                                        <div id="icon"><img id="wicon" src=""></div>
+                                        <div class="humidity"></div>
+                                        <div class="temp"></div>
+                                        <div class="uvi"></div>
+
+                                </div>
+                        </div>
+                        <div class="forecast">
+                                <div class="row">
+                                        <div class="col-lg">
+                                                <h1>5 day forecast:</h1>
+                                        </div>
+                                </div>
+
+                        </div>
+                        <div class="row">
+                                <div class="body1">
+                                        <div class="col-sm-5">
+                                                <div class="card" style="width: 8rem; height: 10rem;" id="forecast1">
+                                                        <div class="card-body-1">
+                                                                <div class="date1"></div>
+                                                                <div id="icon"><img id="wicon1" src=""></div>
+                                                                <div class="humidity1"></div>
+                                                                <div class="temp1"></div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="body2">
+                                        <div class="col-sm-4">
+                                                <div class="card" style="width: 8rem; height: 10rem;" id="forecast2">
+                                                        <div class="card-body-2">
+                                                                        <div class="date2"></div>
+                                                                        <div id="icon"><img id="wicon2" src=""></div>
+                                                                        <div class="humidity2"></div>
+                                                                        <div class="temp2"></div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="body3">
+                                        <div class="col-sm-3">
+                                                <div class="card" style="width: 8rem; height: 10rem;" id="forecast3">
+                                                        <div class="card-body-3">
+                                                                        <div class="date3"></div>
+                                                                        <div id="icon"><img id="wicon3" src=""></div>
+                                                                        <div class="humidity3"></div>
+                                                                        <div class="temp3"></div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="body4">
+                                        <div class="col-sm-2">
+                                                <div class="card" style="width: 8rem; height: 10rem;" id="forecast4">
+                                                        <div class="card-body-4">
+                                                                        <div class="date4"></div>
+                                                                        <div id="icon"><img id="wicon4" src=""></div>
+                                                                        <div class="humidity4"></div>
+                                                                        <div class="temp4"></div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="body5">
+                                        <div class="col-sm-1">
+                                                <div class="card" style="width: 8rem; height: 10rem;" id="forecast5">
+                                                        <div class="card-body-5">
+                                                                        <div class="date5"></div>
+                                                                        <div id="icon"><img id="wicon5" src=""></div>
+                                                                        <div class="humidity5"></div>
+                                                                        <div class="temp5"></div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+
+                        </div>
+
+                </div>
+
+        </div>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+        <script src="asset/script.js"></script>
+</body>
+
+</html>
