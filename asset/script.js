@@ -6,7 +6,7 @@
  
  
 $("#submit").on("click",function(){
-    
+    event.preventDefault();
    var weather = $("#search").val();
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + weather + "&APPID=0c1a0fdb07e880991e77a08ad8ada572" + "&units=metric";
 $.ajax({
