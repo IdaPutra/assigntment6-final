@@ -42,7 +42,7 @@ $.ajax({
         
         var weather = $("#search").val();
   
-        var forecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + weather + "&APPID=0c1a0fdb07e880991e77a08ad8ada572" + "&units=metric";
+        var forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + weather + "&APPID=0c1a0fdb07e880991e77a08ad8ada572" + "&units=metric";
         $.ajax({
             url: forecast,
             method: "GET"
