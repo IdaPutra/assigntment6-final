@@ -1,14 +1,29 @@
 
 
- //var submit= $("#submit");
- //var cities = ["Melbourne", "Sydney", "Adelaide", "Canberra"];
 
+var cities=JSON.parse(localStorage.getItem("city"));
+
+ if(cities){
+   for(var i = 0; i<cities.length; i++){
+     rendersearchCard(cities[i] );
+   }
+  
+  
+ }
+ else{
+    cities = [];
  
- 
+  
+ }
+
+
+ console.log(cities);
+      
 $("#submit").on("click",function(){
     event.preventDefault();
-   var weather = $("#search").val();
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + weather + "&APPID=0c1a0fdb07e880991e77a08ad8ada572" + "&units=metric";
+    rendersearchCard();
+    var newweather = {city:$("#search").val()}
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + newweather.city + "&APPID=0c1a0fdb07e880991e77a08ad8ada572" + "&units=metric";
 $.ajax({
     url: queryURL,
     method: "GET"
@@ -20,7 +35,7 @@ $.ajax({
     
       // Transfer content to HTML
       $(".city").html("<h1>" + response.name + " Weather </h1>");
-      $('#wicon').attr('src',"http://openweathermap.org/img/wn/" +response.weather[0].icon + ".png");
+      $('#wicon').attr('src',"https://openweathermap.org/img/wn/" +response.weather[0].icon + ".png");
       $(".wind").text("Wind Speed: " + response.wind.speed);
       $(".humidity").text("Humidity: " + response.main.humidity);
       $(".temp").text("Temperature (F) " + response.main.temp);
@@ -28,21 +43,9 @@ $.ajax({
    
    
         })
-        var weather = $("#search").val();
-        var uvindex = "openweathermap.org/data/2.5/uvi?lat=" + weather + "&APPID=0c1a0fdb07e880991e77a08ad8ada572";
-    $.ajax({
-        url: uvindex,
-        method: "GET"
-      })
-        //  store all of the retrieved data inside of an object called "response"
-        .then(function(response) {
-          $(".uvi").text(response.value);
-            
-        })
-        
-        var weather = $("#search").val();
-  
-        var forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + weather + "&APPID=0c1a0fdb07e880991e77a08ad8ada572" + "&units=metric";
+       
+        var newweather = {city:$("#search").val()}
+        var forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + newweather.city + "&APPID=0c1a0fdb07e880991e77a08ad8ada572" + "&units=metric";
         $.ajax({
             url: forecast,
             method: "GET"
@@ -74,16 +77,38 @@ $.ajax({
               $(".humidity5").text("Humidity:"+ response.list[36].main.humidity + "%");
 
         
-            
+              
     
         })
-
+       
+        rendersearchCard(newweather );
+        cities.push(newweather);
+        localStorage.setItem("city", JSON.stringify(cities));
+        
+        
       
         
       })
         
 
-    
+      
 
 
   
+      function rendersearchCard(){
+        var newweather = {city:$("#search").val()}
+        
+         var card=  ` <li class="list-group-item">${newweather.city}</li>
+          `
+          $("#citylist").append(card); 
+          
+        }
+
+  
+
+
+
+
+
+         
+   
